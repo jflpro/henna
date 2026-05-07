@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://[YOUR_VERCEL_URL]/sitemap.xml
+Sitemap: https://henna-pied.vercel.app/sitemap.xml

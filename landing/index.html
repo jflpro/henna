@@ -108,47 +108,63 @@
     </div>
   </section>
 
-  <!-- ============ COUNTDOWN ============ -->
-  <section aria-label="Offer countdown" class="px-5 md:px-8 pt-14 md:pt-20 pb-2">
-    <div class="max-w-3xl mx-auto text-center">
-      <span class="inline-block bg-gold text-green1 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] px-4 py-1.5 rounded-full mb-5">
-        ★ Hurry — Ends This Sunday
-      </span>
-      <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-green1 mb-2 leading-tight">
-        Save 30% before the timer hits zero
-      </h2>
-      <p class="text-ink/60 text-sm md:text-base mb-7 md:mb-9">
-        Offer ends Sunday, May 10 · 11:59 PM PST
+  <!-- ============ COUNTDOWN (flip-clock minimaliste, fond sombre) ============ -->
+  <section aria-label="Promotion countdown" class="bg-neutral-900 px-5 py-5 md:py-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-neutral-300 mb-3 md:mb-4">
+        Bundle Duo Promo Ends In:
       </p>
 
       <div id="countdown" role="timer" aria-live="polite"
-           class="flex justify-center gap-1.5 sm:gap-2 md:gap-3">
-        <div class="bg-green1 rounded-lg px-2 py-2 sm:px-3 sm:py-2.5 md:px-4 md:py-3 min-w-[48px] sm:min-w-[56px] md:min-w-[72px] shadow-md ring-1 ring-gold/20">
-          <div id="cd-days"    class="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-gold leading-none tabular-nums">--</div>
-          <div class="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.15em] text-white/80 mt-1">Days</div>
+           class="inline-flex items-start gap-1.5 sm:gap-2">
+
+        <div class="text-center">
+          <div class="relative w-11 sm:w-12 md:w-14 py-2 sm:py-2.5 rounded-md bg-gradient-to-b from-neutral-800 to-neutral-900 ring-1 ring-black/60 shadow-[inset_0_1px_2px_rgba(255,255,255,0.04),0_1px_2px_rgba(0,0,0,0.4)]">
+            <span aria-hidden="true" class="absolute inset-x-1 top-1/2 -translate-y-px h-px bg-black/70"></span>
+            <span id="cd-days" class="relative block text-base sm:text-lg md:text-xl font-semibold text-neutral-100 tabular-nums leading-none">--</span>
+          </div>
+          <span class="block mt-1.5 text-[8px] sm:text-[9px] tracking-[0.2em] uppercase text-gold/85 font-medium">Days</span>
         </div>
-        <div class="bg-green1 rounded-lg px-2 py-2 sm:px-3 sm:py-2.5 md:px-4 md:py-3 min-w-[48px] sm:min-w-[56px] md:min-w-[72px] shadow-md ring-1 ring-gold/20">
-          <div id="cd-hours"   class="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-gold leading-none tabular-nums">--</div>
-          <div class="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.15em] text-white/80 mt-1">Hours</div>
+
+        <span aria-hidden="true" class="text-neutral-600 text-base sm:text-lg md:text-xl leading-none pt-2 sm:pt-2.5">:</span>
+
+        <div class="text-center">
+          <div class="relative w-11 sm:w-12 md:w-14 py-2 sm:py-2.5 rounded-md bg-gradient-to-b from-neutral-800 to-neutral-900 ring-1 ring-black/60 shadow-[inset_0_1px_2px_rgba(255,255,255,0.04),0_1px_2px_rgba(0,0,0,0.4)]">
+            <span aria-hidden="true" class="absolute inset-x-1 top-1/2 -translate-y-px h-px bg-black/70"></span>
+            <span id="cd-hours" class="relative block text-base sm:text-lg md:text-xl font-semibold text-neutral-100 tabular-nums leading-none">--</span>
+          </div>
+          <span class="block mt-1.5 text-[8px] sm:text-[9px] tracking-[0.2em] uppercase text-gold/85 font-medium">Hours</span>
         </div>
-        <div class="bg-green1 rounded-lg px-2 py-2 sm:px-3 sm:py-2.5 md:px-4 md:py-3 min-w-[48px] sm:min-w-[56px] md:min-w-[72px] shadow-md ring-1 ring-gold/20">
-          <div id="cd-minutes" class="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-gold leading-none tabular-nums">--</div>
-          <div class="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.15em] text-white/80 mt-1">Minutes</div>
+
+        <span aria-hidden="true" class="text-neutral-600 text-base sm:text-lg md:text-xl leading-none pt-2 sm:pt-2.5">:</span>
+
+        <div class="text-center">
+          <div class="relative w-11 sm:w-12 md:w-14 py-2 sm:py-2.5 rounded-md bg-gradient-to-b from-neutral-800 to-neutral-900 ring-1 ring-black/60 shadow-[inset_0_1px_2px_rgba(255,255,255,0.04),0_1px_2px_rgba(0,0,0,0.4)]">
+            <span aria-hidden="true" class="absolute inset-x-1 top-1/2 -translate-y-px h-px bg-black/70"></span>
+            <span id="cd-minutes" class="relative block text-base sm:text-lg md:text-xl font-semibold text-neutral-100 tabular-nums leading-none">--</span>
+          </div>
+          <span class="block mt-1.5 text-[8px] sm:text-[9px] tracking-[0.2em] uppercase text-gold/85 font-medium">Minutes</span>
         </div>
-        <div class="bg-green1 rounded-lg px-2 py-2 sm:px-3 sm:py-2.5 md:px-4 md:py-3 min-w-[48px] sm:min-w-[56px] md:min-w-[72px] shadow-md ring-1 ring-gold/20">
-          <div id="cd-seconds" class="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-gold leading-none tabular-nums">--</div>
-          <div class="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.15em] text-white/80 mt-1">Seconds</div>
+
+        <span aria-hidden="true" class="text-neutral-600 text-base sm:text-lg md:text-xl leading-none pt-2 sm:pt-2.5">:</span>
+
+        <div class="text-center">
+          <div class="relative w-11 sm:w-12 md:w-14 py-2 sm:py-2.5 rounded-md bg-gradient-to-b from-neutral-800 to-neutral-900 ring-1 ring-black/60 shadow-[inset_0_1px_2px_rgba(255,255,255,0.04),0_1px_2px_rgba(0,0,0,0.4)]">
+            <span aria-hidden="true" class="absolute inset-x-1 top-1/2 -translate-y-px h-px bg-black/70"></span>
+            <span id="cd-seconds" class="relative block text-base sm:text-lg md:text-xl font-semibold text-neutral-100 tabular-nums leading-none">--</span>
+          </div>
+          <span class="block mt-1.5 text-[8px] sm:text-[9px] tracking-[0.2em] uppercase text-gold/85 font-medium">Seconds</span>
         </div>
       </div>
 
-      <p id="countdown-expired" class="hidden mt-6 text-brown font-semibold text-base md:text-lg uppercase tracking-wider">
-        ⏰ Offer expired — keep an eye on your inbox for the next drop.
+      <p id="countdown-expired" class="hidden mt-3 text-gold/80 text-[10px] uppercase tracking-[0.25em]">
+        ⏰ Promo ended
       </p>
     </div>
   </section>
 
   <!-- ============ OFFER CARDS ============ -->
-  <section id="products" class="max-w-7xl mx-auto px-5 md:px-8 py-12 md:py-16 lg:py-20">
+  <section id="products" class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 lg:py-28">
     <header class="text-center mb-12 md:mb-16">
       <span class="text-brown text-xs font-semibold uppercase tracking-[0.3em]">✦ Our Bestsellers ✦</span>
       <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-green1 mt-4 leading-tight">

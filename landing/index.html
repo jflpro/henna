@@ -34,10 +34,14 @@
   <!-- Canonical (update with real URL after Vercel deploy) -->
   <link rel="canonical" href="https://henna-pied.vercel.app/" />
 
-  <!-- Fonts -->
+  <!-- Preload hero (LCP element) -->
+  <link rel="preload" as="image" href="images/hero-banner.webp" type="image/webp" fetchpriority="high" />
+
+  <!-- Fonts (deferred load — non-render-blocking via print-onload pattern) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 
   <!-- Compiled Tailwind CSS (19 KB minified) -->
   <link rel="stylesheet" href="style.css" />
@@ -55,7 +59,7 @@
   <header class="sticky top-0 z-40 bg-bg/90 backdrop-blur-md border-b border-green1/10">
     <div class="max-w-7xl mx-auto px-5 md:px-8 py-3 md:py-4 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-2 shrink-0">
-        <img src="images/logo-reshma.png" alt="Reshma Beauty" class="h-7 md:h-9 w-auto">
+        <img src="images/logo-reshma.png" alt="Reshma Beauty" width="400" height="210" class="h-7 md:h-9 w-auto">
       </a>
 
       <nav class="hidden md:flex items-center gap-7 lg:gap-10 text-sm font-medium text-green1">
@@ -75,9 +79,15 @@
 
   <!-- ============ HERO ============ -->
   <section id="top" class="relative w-full h-[85vh] sm:h-[80vh] md:h-[85vh] lg:h-[90vh] overflow-hidden">
-    <img src="images/hero-banner.jpg"
-         alt="Botanical henna haircare ritual"
-         class="absolute inset-0 w-full h-full object-cover object-center" />
+    <picture>
+      <source srcset="images/hero-banner.webp" type="image/webp" />
+      <img src="images/hero-banner.jpg"
+           alt="Botanical henna haircare ritual"
+           width="1200" height="1200"
+           fetchpriority="high"
+           decoding="async"
+           class="absolute inset-0 w-full h-full object-cover object-center" />
+    </picture>
     <div class="absolute inset-0 bg-gradient-to-b from-green1/30 via-green1/40 to-green1/80"></div>
 
     <div class="relative z-10 h-full flex flex-col justify-end md:justify-center items-center text-center px-6 pb-14 md:pb-0">
@@ -94,7 +104,7 @@
          class="bg-gold hover:bg-white text-green1 font-bold uppercase tracking-wider text-sm md:text-base px-8 md:px-10 py-4 md:py-5 rounded-md transition transform hover:-translate-y-0.5 hover:scale-[1.02] shadow-lg">
         Shop The Bundle →
       </a>
-      <p class="text-white/70 text-xs mt-4 tracking-wider uppercase">Free shipping over $35 · 30-day returns</p>
+      <p class="text-white/90 text-xs mt-4 tracking-wider uppercase">Free shipping over $35 · 30-day returns</p>
     </div>
   </section>
 
@@ -117,6 +127,8 @@
         <div class="overflow-hidden">
           <img src="images/shampoo-bottle.jpg"
                alt="Reshma Beauty Henna Shampoo bottle"
+               width="1200" height="1200"
+               loading="lazy" decoding="async"
                class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition duration-500">
         </div>
         <div class="p-6 md:p-7 flex flex-col flex-1">
@@ -153,9 +165,13 @@
         <div class="grid grid-cols-2">
           <img src="images/shampoo-bottle.jpg"
                alt="Henna Shampoo"
+               width="1200" height="1200"
+               loading="lazy" decoding="async"
                class="w-full aspect-square object-cover">
           <img src="images/conditioner-bottle.jpg"
                alt="Henna Conditioner"
+               width="1200" height="1200"
+               loading="lazy" decoding="async"
                class="w-full aspect-square object-cover">
         </div>
         <div class="p-6 md:p-7 flex flex-col flex-1">
@@ -182,7 +198,7 @@
              class="block w-full text-center bg-gold hover:bg-white text-green1 font-extrabold uppercase text-sm tracking-[0.15em] py-4 rounded-md transition transform hover:scale-[1.02]">
             Unlock 30% Bundle →
           </a>
-          <p class="text-center text-white/60 text-[11px] mt-3 uppercase tracking-wider">
+          <p class="text-center text-white/85 text-[11px] mt-3 uppercase tracking-wider">
             Offer ends Sunday · 11:59 PM PST
           </p>
         </div>
@@ -193,6 +209,8 @@
         <div class="overflow-hidden">
           <img src="images/conditioner-bottle.jpg"
                alt="Reshma Beauty Henna Conditioner bottle"
+               width="1200" height="1200"
+               loading="lazy" decoding="async"
                class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition duration-500">
         </div>
         <div class="p-6 md:p-7 flex flex-col flex-1">
@@ -228,6 +246,8 @@
     <div class="max-w-7xl mx-auto px-5 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-20 items-center">
       <img src="images/botanical-lifestyle.jpg"
            alt="Botanical Ayurvedic ingredients arrangement"
+           width="1200" height="1200"
+           loading="lazy" decoding="async"
            class="w-full rounded-2xl object-cover aspect-[4/3] md:aspect-[5/4] shadow-xl order-1 md:order-1">
       <div class="order-2 md:order-2">
         <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em]">Rooted in Ritual</span>
@@ -303,7 +323,7 @@
   <!-- ============ FOOTER ============ -->
   <footer class="bg-green1 text-white/80 pt-14 pb-10 px-5 md:px-8">
     <div class="max-w-7xl mx-auto text-center">
-      <img src="images/logo-reshma.png" class="h-10 w-auto mx-auto mb-3" alt="Reshma Beauty">
+      <img src="images/logo-reshma.png" width="400" height="210" loading="lazy" class="h-10 w-auto mx-auto mb-3" alt="Reshma Beauty">
       <p class="text-xs tracking-[0.3em] uppercase text-gold mb-8">Botanical Henna Haircare</p>
 
       <div class="flex justify-center gap-5 md:gap-7 mb-8 text-sm">

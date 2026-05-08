@@ -5,3 +5,16 @@
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; }
 .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+/* ============ Popup animations (fade-in + light zoom) ============ */
+@keyframes popup-enter {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes backdrop-enter {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.popup-card     { animation: popup-enter 280ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.popup-backdrop { animation: backdrop-enter 280ms ease-out both; }
+.popup-locked   { overflow: hidden !important; }
